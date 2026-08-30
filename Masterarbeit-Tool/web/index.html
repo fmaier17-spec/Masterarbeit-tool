@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fabian Maier Masterarbeit</title>
+<link rel="stylesheet" href="/web/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f4bd8'/><path d='M9 22V10h3l4 7 4-7h3v12h-3v-7l-3 5h-2l-3-5v7z' fill='white'/></svg>">
+</head>
+<body>
+
+<div class="huelle">
+
+  <aside class="leiste">
+    <div class="marke">
+      <b>Fabian Maier Masterarbeit</b>
+      <span>Bilanzanalyse österreichischer GmbH</span>
+      <div class="puls"><i class="punkt" id="ampel"></i><span id="ampel_text">verbunden</span></div>
+    </div>
+
+    <nav id="nav">
+      <h6>Auswertung</h6>
+      <a href="#uebersicht" class="an" data-seite="uebersicht">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+        Übersicht</a>
+      <a href="#stichprobe" data-seite="stichprobe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        Stichprobe</a>
+      <a href="#unternehmen" data-seite="unternehmen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h2m2 0h2M9 13h2m2 0h2M9 17h6"/></svg>
+        Unternehmen <span class="zahl" id="n_untern">–</span></a>
+      <a href="#kennzahlen" data-seite="kennzahlen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+        Kennzahlen</a>
+      <a href="#groessen" data-seite="groessen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="14" width="4" height="7" rx="1"/><rect x="10" y="9" width="4" height="12" rx="1"/><rect x="17" y="4" width="4" height="17" rx="1"/></svg>
+        Größenklassen</a>
+      <a href="#auffaellig" data-seite="auffaellig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10.3 4.3 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+        Auffälligkeiten <span class="zahl" id="n_auff">–</span></a>
+      <a href="#prognose" data-seite="prognose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+        Prognose</a>
+
+      <h6>Erhebung</h6>
+      <a href="#erhebung" data-seite="erhebung">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+        Datenabruf</a>
+      <a href="#herkunft" data-seite="herkunft">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+        Herkunftsnachweis</a>
+      <a href="#einstellungen" data-seite="einstellungen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>
+        Einstellungen</a>
+    </nav>
+
+    <div class="fuss">
+      Universität Graz<br>Institut für Unternehmensrechnung und Reporting
+    </div>
+  </aside>
+
+  <div class="bahn">
+    <header class="kopf">
+      <div>
+        <h1 id="titel">Übersicht</h1>
+      </div>
+      <div class="rechts">
+        <span id="kopf_merk"></span>
+        <button class="knopf still" id="neu_laden" title="Auswertung neu berechnen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ===================================================== Übersicht -->
+      <section class="seite an" id="s_uebersicht">
+        <div class="raster r4" style="margin-bottom:var(--s4)">
+          <div class="karte kpi"><div class="titel">Unternehmen</div>
+            <div class="wert" id="k_untern">–</div>
+            <div class="hinweis" id="k_untern_h">GmbH, fünf Branchen</div></div>
+          <div class="karte kpi"><div class="titel">Firmenjahre</div>
+            <div class="wert" id="k_jahre">–</div>
+            <div class="hinweis" id="k_jahre_h">Geschäftsjahre 2019 bis 2025</div></div>
+          <div class="karte kpi"><div class="titel">Einzelwerte</div>
+            <div class="wert" id="k_werte">–</div>
+            <div class="hinweis" id="k_werte_h">im Herkunftsnachweis belegt</div></div>
+          <div class="karte kpi"><div class="titel">Auffällige Firmenjahre</div>
+            <div class="wert" id="k_auff">–</div>
+            <div class="hinweis" id="k_auff_h">nach der Zwei-Dimensionen-Regel</div>
+            <div class="balken"><i id="k_auff_b" style="width:0"></i></div></div>
+        </div>
+
+        <div class="raster r21" style="margin-bottom:var(--s4)">
+          <div class="karte">
+            <header><div><h3>Kennzahlen im Überblick</h3>
+              <p>Median über alle Firmenjahre, Fallzahl je Kennzahl</p></div></header>
+            <div class="leib ohne"><table class="tab" id="t_kz"></table></div>
+          </div>
+          <div class="karte">
+            <div class="leib abb-leib"><div id="d_ring"></div></div>
+          </div>
+        </div>
+
+        <div class="raster r2" style="margin-bottom:var(--s4)">
+          <div class="karte"><div class="leib abb-leib"><div id="d_jahre"></div></div></div>
+          <div class="karte"><div class="leib abb-leib"><div id="d_groessen"></div></div></div>
+        </div>
+
+        <div class="raster r2">
+          <div class="karte">
+            <header><div><h3>Herleitung der auswertbaren Übergänge</h3>
+              <p>Von den erhobenen Firmenjahren zum Prognosedatensatz</p></div></header>
+            <div class="leib" id="d_uebergang"></div>
+          </div>
+          <div class="karte">
+            <header><div><h3>Letzte Erhebungsläufe</h3>
+              <p>Protokoll der Datenabrufe</p></div>
+              <div class="rechts"><a href="#erhebung" class="knopf klein">Zum Abruf</a></div></header>
+            <div class="leib ohne"><table class="tab" id="t_laeufe"></table></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Erhebung -->
+      <section class="seite" id="s_erhebung">
+        <div class="raster r12" style="margin-bottom:var(--s4)">
+          <div class="stapel">
+            <div class="karte">
+              <header><div><h3>Lauf starten</h3><p>Betriebsart wählen und Umfang festlegen</p></div></header>
+              <div class="leib stapel">
+                <div>
+                  <label class="et">Betriebsart</label>
+                  <div class="gruppe" id="g_modus" style="width:100%">
+                    <button data-m="probe" class="an" style="flex:1">Wiedergabe</button>
+                    <button data-m="live" style="flex:1">Bestand aktualisieren</button>
+                    <button data-m="neu" style="flex:1">Neue suchen</button>
+                  </div>
+                  <p class="hilfe" id="modus_hilfe">Der gespeicherte Bestand läuft erneut durch dieselbe
+                    Verarbeitungskette. Ohne Netzzugriff, für Vorführungen geeignet.</p>
+                </div>
+                <div>
+                  <label class="et">Umfang — Anzahl der Gesellschaften</label>
+                  <div class="reihe" style="gap:var(--s2)">
+                    <input class="feld" id="f_umfang" type="number" min="1" max="5000"
+                           placeholder="alle" style="flex:1">
+                    <div class="gruppe">
+                      <button type="button" data-n="10">10</button>
+                      <button type="button" data-n="50">50</button>
+                      <button type="button" data-n="200">200</button>
+                      <button type="button" data-n="">alle</button>
+                    </div>
+                  </div>
+                  <p class="hilfe" id="umfang_hilfe">Leer lassen heißt: alle vorgemerkten
+                    Gesellschaften. Die Schaltflächen setzen gebräuchliche Werte.</p>
+                </div>
+                <div>
+                  <label class="et">Branche</label>
+                  <select class="feld" id="f_branche_e">
+                    <option value="">Alle Branchen</option>
+                  </select>
+                </div>
+                <div id="w_stich">
+                  <label class="et">Stichwörter</label>
+                  <input class="feld" id="f_stich"
+                         placeholder="z. B. Tischlerei, Möbel, Schreinerei">
+                  <p class="hilfe">Mit Komma trennen, für beliebige Branchen. Das Feld
+                    Branche darüber bleibt leer — es dient nur als Abkürzung, wenn du die
+                    hinterlegten Begriffe einer der fünf Branchen verwenden willst.
+                    Jeder Suchlauf wird mit seinen Stichwörtern protokolliert.</p>
+                </div>
+                <div class="reihe">
+                  <button class="knopf voll" id="b_start" style="flex:1">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>
+                    Lauf starten</button>
+                  <button class="knopf gefahr" id="b_stopp" disabled>Anhalten</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="karte">
+              <header><div><h3>Verarbeitungskette</h3><p>Was mit jedem Datensatz geschieht</p></div></header>
+              <div class="leib">
+                <div class="schritte" id="d_schritte"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stapel">
+            <div class="raster r4">
+              <div class="karte kpi" style="padding:var(--s4)"><div class="titel">Fortschritt</div>
+                <div class="wert" style="font-size:24px" id="e_fort">0<small> / 0</small></div></div>
+              <div class="karte kpi" style="padding:var(--s4)"><div class="titel">Firmenjahre</div>
+                <div class="wert" style="font-size:24px" id="e_jahre">0</div></div>
+              <div class="karte kpi" style="padding:var(--s4)"><div class="titel">Einzelwerte</div>
+                <div class="wert" style="font-size:24px" id="e_werte">0</div></div>
+              <div class="karte kpi" style="padding:var(--s4)"><div class="titel">Fehler</div>
+                <div class="wert" style="font-size:24px" id="e_fehler">0</div></div>
+            </div>
+
+            <div class="karte">
+              <header>
+                <div><h3>Verlaufsprotokoll</h3><p id="e_status">Bereit</p></div>
+                <div class="rechts"><span class="merk" id="e_merk"><i></i>bereit</span></div>
+              </header>
+              <div class="leib">
+                <div class="balken" style="height:4px;border-radius:2px;background:var(--rand);margin-bottom:var(--s4);overflow:hidden">
+                  <i id="e_balken" style="display:block;height:100%;width:0;background:var(--akzent);border-radius:2px;transition:width .3s"></i>
+                </div>
+                <div class="protokoll" id="e_log">
+                  <div class="z"><span class="x" style="color:var(--text-3)">Noch kein Lauf gestartet.</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Stichprobe -->
+      <section class="seite" id="s_stichprobe">
+        <div class="meldung info" style="margin-bottom:var(--s4)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+          <div><b>Diese Seite belegt, wie die Stichprobe zustande kam.</b> Sie beantwortet zwei
+            Fragen: Warum genau diese fünf Branchen — und wie wurde jede Gesellschaft ihrer
+            Branche zugeordnet, wenn die Quelle keinen ÖNACE-Code führt? Alle Zahlen sind aus dem
+            Bestand berechnet, nicht eingetragen.</div>
+        </div>
+        <div class="raster r4" id="d_stkpi" style="margin-bottom:var(--s4)"></div>
+        <div class="karte" style="margin-bottom:var(--s4)">
+          <header><div><h3>Auswahl in drei Schritten</h3>
+            <p>Vom Grundgesamtheit zur ausgewerteten Stichprobe</p></div></header>
+          <div class="leib" id="d_stschritte"></div>
+        </div>
+        <div class="karte" style="margin-bottom:var(--s4)">
+          <header><div><h3>Zuordnungsregel je Branche</h3>
+            <p>Welcher Wortbestandteil im Firmenwortlaut wie oft gegriffen hat</p></div></header>
+          <div class="leib ohne"><table class="tab" id="t_stbranche"></table></div>
+        </div>
+        <div class="karte">
+          <header><div><h3>Grenze der Regel</h3>
+            <p>Gesellschaften, die kein Stichwort trägt</p></div></header>
+          <div class="leib" id="d_stohne"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Unternehmen -->
+      <section class="seite" id="s_unternehmen">
+        <div class="karte">
+          <header>
+            <div style="flex:1;max-width:320px">
+              <input class="feld" id="f_such" placeholder="Firmenwortlaut, Firmenbuchnummer oder Sitz">
+            </div>
+            <select class="feld" id="f_branche" style="width:auto"><option value="">Alle Branchen</option></select>
+            <select class="feld" id="f_klasse" style="width:auto">
+              <option value="">Alle Größenklassen</option>
+              <option>Kleinst</option><option>Klein</option>
+              <option value="Mittelgross">Mittelgroß</option><option>Gross</option>
+            </select>
+            <div class="rechts">
+              <span class="merk" id="u_zahl">–</span>
+              <a class="knopf klein" href="/api/export/unternehmen">CSV</a>
+            </div>
+          </header>
+          <div class="leib ohne">
+            <div class="rollen"><table class="tab" id="t_untern"></table></div>
+            <div class="blaettern" id="u_blaettern"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Kennzahlen -->
+      <section class="seite" id="s_kennzahlen">
+        <div class="karte" style="margin-bottom:var(--s4)">
+          <header>
+            <select class="feld" id="f_kz" style="width:auto;max-width:280px"></select>
+            <select class="feld" id="f_kzjahr" style="width:auto"><option value="">Alle Geschäftsjahre</option></select>
+            <div class="rechts"><span class="merk" id="kz_n">–</span></div>
+          </header>
+          <div class="leib abb-leib">
+            <div class="raster r2">
+              <div id="d_median"></div>
+              <div id="d_kasten"></div>
+            </div>
+            <div class="raster r2" style="margin-top:var(--s4)">
+              <div id="d_hist"></div>
+              <div id="d_korr"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="raster r21" style="margin-bottom:var(--s4)">
+          <div class="karte">
+            <header><div><h3>Kennwerte je Branche</h3>
+              <p>Median mit 95-Prozent-Vertrauensbereich aus 1.500 Ziehungen</p></div></header>
+            <div class="leib ohne"><table class="tab" id="t_kzbranche"></table></div>
+          </div>
+          <div class="karte">
+            <header><div><h3>Unterschied zwischen den Branchen</h3><p>Kruskal-Wallis-Test</p></div></header>
+            <div class="leib" id="d_kruskal"></div>
+          </div>
+        </div>
+
+        <div class="raster r2">
+          <div class="karte"><div class="leib abb-leib"><div id="d_verlauf"></div></div></div>
+          <div class="karte">
+            <header><div><h3>Paarweise Vergleiche</h3>
+              <p>Mann-Whitney-U, korrigiert nach Benjamini-Hochberg</p></div></header>
+            <div class="leib ohne"><div class="rollen" style="max-height:330px">
+              <table class="tab" id="t_paare"></table></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Größenklassen -->
+      <section class="seite" id="s_groessen">
+        <div class="meldung info" style="margin-bottom:var(--s4)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+          <div><b>Näherung, keine amtliche Einstufung.</b> § 221 UGB stellt auf Bilanzsumme,
+            Umsatzerlöse und Beschäftigtenzahl ab. Da die Gesellschaften ihre Gewinn- und
+            Verlustrechnung überwiegend nicht offenlegen und die Beschäftigtenzahl im Firmenbuch
+            nicht geführt wird, stützt sich die Einstufung allein auf die Bilanzsumme.
+            Für Geschäftsjahre ab 2024 gelten die um 25 Prozent angehobenen Schwellen.</div>
+        </div>
+
+        <div class="raster r4" id="d_gkpi" style="margin-bottom:var(--s4)"></div>
+
+        <div class="raster r2" style="margin-bottom:var(--s4)">
+          <div class="karte"><div class="leib abb-leib"><div id="d_gbranche"></div></div></div>
+          <div class="karte"><div class="leib abb-leib"><div id="d_gjahr"></div></div></div>
+        </div>
+
+        <div class="raster r2">
+          <div class="karte">
+            <header><div><h3>Kennzahlen je Größenklasse</h3><p>Median über alle Firmenjahre der Klasse</p></div></header>
+            <div class="leib ohne"><table class="tab" id="t_gkz"></table></div>
+          </div>
+          <div class="karte">
+            <header><div><h3>Angewandte Schwellen</h3><p>Bilanzsumme in Euro</p></div></header>
+            <div class="leib ohne"><table class="tab" id="t_grenzen"></table></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Auffälligkeiten -->
+      <section class="seite" id="s_auffaellig">
+        <div class="raster r3" style="margin-bottom:var(--s4)">
+          <div class="karte">
+            <header><div><h3>Regel</h3><p>Drei Dimensionen, auffällig ab zwei</p></div></header>
+            <div class="leib" id="d_regel"></div>
+          </div>
+          <div class="karte"><div class="leib abb-leib"><div id="d_dim"></div></div></div>
+          <div class="karte"><div class="leib abb-leib"><div id="d_ajahr"></div></div></div>
+        </div>
+
+        <div class="raster r12" style="margin-bottom:var(--s4)">
+          <div class="karte"><div class="leib abb-leib"><div id="d_abranche"></div></div></div>
+          <div class="karte">
+            <header><div><h3>Anteil je Dimension und Branche</h3><p>Wie oft die Dimension kritisch ist</p></div></header>
+            <div class="leib ohne"><table class="tab" id="t_abranche"></table></div>
+          </div>
+        </div>
+
+        <div class="karte">
+          <header><div><h3>Auffällige Firmenjahre</h3>
+            <p>Aufsteigend nach Eigenkapitalquote, erste 400 Fälle</p></div>
+            <div class="rechts"><a class="knopf klein" href="/api/export/firmenjahre">CSV</a></div></header>
+          <div class="leib ohne"><div class="rollen"><table class="tab" id="t_auff"></table></div></div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Prognose -->
+      <section class="seite" id="s_prognose">
+        <div class="karte" style="margin-bottom:var(--s4)">
+          <header>
+            <div><h3>Prognose der Auffälligkeit im Folgejahr</h3>
+              <p>Angelernt auf Zieljahren bis 2023, geprüft auf 2024 und 2025</p></div>
+            <div class="rechts">
+              <span class="merk" id="p_merk"><i></i>nicht berechnet</span>
+              <button class="knopf voll" id="b_prognose">Auswertung starten</button>
+            </div>
+          </header>
+          <div class="leib" id="d_pstatus">
+            <div class="leer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+              <b>Noch nicht berechnet</b>
+              <p>Der Start lernt drei Verfahren an und prüft sie auf einem Zeitraum,
+                der beim Anlernen nicht verwendet wurde.</p>
+            </div>
+          </div>
+        </div>
+        <div id="d_pergebnis"></div>
+      </section>
+
+      <!-- ===================================================== Herkunft -->
+      <section class="seite" id="s_herkunft">
+        <div class="meldung info" style="margin-bottom:var(--s4)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+          <div><b>Jeder Wert der Arbeit ist bis zur Quelle rückverfolgbar.</b>
+            Für jeden übernommenen Betrag sind die Rohbezeichnung des Feldes, der unveränderte
+            Rohwert, die Einheit, der genutzte Endpunkt und der Abrufzeitpunkt festgehalten.
+            Die Kennzahlen selbst werden nicht gespeichert, sie entstehen bei jedem Aufruf neu
+            aus diesen Rohwerten.</div>
+        </div>
+        <div class="raster r2" style="margin-bottom:var(--s4)">
+          <div class="karte">
+            <header><div><h3>Feldbezug</h3>
+              <p>Rohbezeichnung der Quelle und Feld im Datenmodell</p></div></header>
+            <div class="leib ohne"><div class="rollen" style="max-height:420px">
+              <table class="tab" id="t_bezug"></table></div></div>
+          </div>
+          <div class="karte">
+            <header><div><h3>Belegung je Feld</h3><p>Wie viele Firmenjahre den Wert enthalten</p></div></header>
+            <div class="leib ohne"><div class="rollen" style="max-height:420px">
+              <table class="tab" id="t_belegung"></table></div></div>
+          </div>
+        </div>
+        <div class="karte">
+          <header><div><h3>Ausgabe</h3><p>Alle Datenblätter als Trennzeichendatei</p></div></header>
+          <div class="leib reihe">
+            <a class="knopf" href="/api/export/unternehmen">Unternehmen</a>
+            <a class="knopf" href="/api/export/firmenjahre">Firmenjahre mit Kennzahlen</a>
+            <a class="knopf" href="/api/export/herkunft">Herkunftsnachweis</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== Einstellungen -->
+      <section class="seite" id="s_einstellungen">
+        <div class="raster r2">
+          <div class="karte">
+            <header><div><h3>Schnittstelle</h3><p>Zugang für den Live-Abruf</p></div></header>
+            <div class="leib stapel">
+              <div><label class="et">Grundadresse</label>
+                <input class="feld" id="e_basis" placeholder="https://openfirmenbuch.at/api"></div>
+              <div><label class="et">Endpunkt</label>
+                <input class="feld" id="e_pfad" placeholder="/of/multiple">
+                <p class="hilfe">Die Erhebung der Arbeit nutzte den Endpunkt <code>of/multiple</code>.</p></div>
+              <div><label class="et">Zugangsschlüssel <span style="font-weight:400;color:var(--text-3)">— nicht erforderlich</span></label>
+                <input class="feld" id="e_schluessel" type="password" placeholder="leer lassen">
+                <p class="hilfe">openfirmenbuch.at ist frei zugänglich, der Abruf funktioniert ohne
+                  Anmeldung. Das Feld bleibt leer. Nur falls die Schnittstelle später eine Kennung
+                  verlangt, wird sie hier hinterlegt und liegt dann in <code>masterarbeit.db</code>
+                  im Programmordner.</p></div>
+              <div class="raster r2">
+                <div><label class="et">Übergabe</label>
+                  <select class="feld" id="e_art">
+                    <option value="header">Kopfzeile</option>
+                    <option value="bearer">Kopfzeile Authorization: Bearer</option>
+                    <option value="query">Adressparameter</option>
+                  </select></div>
+                <div><label class="et">Feldname</label>
+                  <input class="feld" id="e_feld" placeholder="X-API-Key"></div>
+              </div>
+              <div><label class="et">Wartezeit zwischen Abrufen in Millisekunden</label>
+                <input class="feld" id="e_pause" type="number" min="0" step="50">
+                <p class="hilfe">Schont die Schnittstelle und beugt einer Sperre wegen zu häufiger Abfragen vor.</p></div>
+              <div class="reihe">
+                <button class="knopf voll" id="b_speichern">Speichern</button>
+                <button class="knopf" id="b_pruefen">Verbindung prüfen</button>
+                <button class="knopf" id="b_suchen" title="Gebräuchliche Endpunkte der Reihe nach abfragen">Endpunkt suchen</button>
+                <button class="knopf" id="b_alle" title="Alle vier Endpunkte einzeln abfragen">Alle vier prüfen</button>
+              </div>
+              <div id="d_pruef"></div>
+            </div>
+          </div>
+
+          <div class="stapel">
+            <div class="karte">
+              <header><div><h3>Bestand</h3><p>Inhalt der lokalen Datenbank</p></div></header>
+              <div class="leib"><dl class="paare" id="d_bestand"></dl></div>
+            </div>
+            <div class="karte">
+              <header><div><h3>Hinweise zum Betrieb</h3></div></header>
+              <div class="leib stapel" style="gap:var(--s3)">
+                <div class="meldung warn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.3 4.3 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.3a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+                  <div><b>Ein Live-Abruf überschreibt vorhandene Werte.</b> Vor einem Lauf über den
+                    gesamten Bestand empfiehlt sich eine Sicherung der Datei
+                    <code>masterarbeit.db</code>.</div>
+                </div>
+                <div class="meldung info">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+                  <div>Die Wiedergabe verändert die Daten nicht in ihrer Substanz. Sie schickt den
+                    gespeicherten Bestand erneut durch Zerlegung, Zuordnung und Speicherung und
+                    eignet sich damit für Vorführungen.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div class="schleier" id="schleier"></div>
+<aside class="schublade" id="schublade">
+  <header>
+    <div style="flex:1">
+      <h2 id="sch_titel">–</h2>
+      <p style="font-size:12.5px;color:var(--text-3);margin-top:2px" id="sch_unter"></p>
+    </div>
+    <button class="knopf still" id="sch_zu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </header>
+  <div class="leib" id="sch_leib"></div>
+</aside>
+
+<script type="module" src="/web/app.js"></script>
+</body>
+</html>
